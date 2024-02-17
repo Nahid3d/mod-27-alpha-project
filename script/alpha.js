@@ -4,9 +4,22 @@ function play(){
 
     const playGroundSection =document.getElementById('play-ground');
     playGroundSection.classList.remove('hidden')
+    hideElementById('final-score');
+
+   //  reset life 
+   setTextElementValueById('life',5);
+   setTextElementValueById('score',0);
+
     continueGame();
+
+   //  const hiddenplayGroundSection = document.getElementById('play-ground');
+   //  hiddenplayGroundSection.classList.add('hidden')
+   //  gameOver()
+   //  const showPlayGroundSection = document.getElementById('final-score');
+   //  showPlayGroundSection.classList.remove('hidden');
    
 }
+
 
 function continueGame(){
     const alphabet = alphabetArandom();
@@ -55,7 +68,20 @@ function handelKeyBoardPress(event){
    const currentLife = parseInt(currentLifeText);
    const newlife = currentLife - 1;
    currentLifeElement.innerText = newlife;
+   if(newlife === 0){
+      gameOver()
+   }
  }
 
 }
 document.addEventListener('keyup',handelKeyBoardPress);
+
+function gameOver(){
+   hideElementById('play-ground');
+   showElementById('final-score');
+
+   // last score added 
+   const lastScore = setTextElementValueById('score');
+   console.log(lastScore);
+   setTextElementValueById('last-score', lastScore);
+}

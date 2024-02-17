@@ -75,26 +75,27 @@
  <!-- live score  -->
  <div class="flex pl-10 pr-10 justify-between ">
     <button class=" rounded-full btn text-white hover:bg-[#894189] bg-[#894189]">
-        Button
+        life
         <img src="/images/hard.png" alt="">
         <span id="life">5</span>
       </button>
     <button class="rounded-full text-white btn hover:bg-[#360490] bg-[#360490]">
-        Button
+        score
         <img src="/images/dolar.png" alt="">
         <span id="score">0</span>
       </button>
  </div>
  </section>
  <!-- score section  -->
- <section class="score hidden">
+ <section id="final-score" class="hidden">
  <div class="flex flex-col justify-center items-center min-h-screen space-y-10 ">
   
     <div class="rounded-lg border p-10 text-center space-y-8 bg-[#ffffff33] border-[#ffffff33]">
+      <h4 class="text-3xl text-black">Game over !</h4>
         <h1 class="text-8xl text-white">
-            <span class="font-extrabold">Score :</span><span>14</span>
+            <span class="font-extrabold">Score :</span><span id="last-score">14</span>
                </h1>
-               <button class="btn bg-white text-black hover:bg-white py-7 px-10 w-48">Play Agin</button>
+               <button onclick="play()" class="btn bg-white text-black hover:bg-white py-7 px-10 w-48">Play Agin</button>
                <p class="text-white">Practice will make you Pro</p>
     </div>
  </div>
